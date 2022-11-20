@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kalkulator Sederhana</title>
+</head>
+
+<body>  
+<h2>Kalkulator Sederhana</h2>       
+      <br>
+          <form method="post" action="">
+              <label for="nilai1">Bil 1</label>
+              <input type="text" id="nilai1" autocomplete="off"><br>
+               <label for="nilai2">Bil 2</label>
+               <input type="text" id="nilai2" autocomplete="off"><br><br>
+               <button type="button" id="tambah" onclick=tambah()>+</button>
+               <button type="button" id="kurang" onclick=kurang()>-</button>
+               <button type="button" id="kali" onclick=kali()>x</button>
+               <button type="button" id="bagi" onclick=bagi()>/</button>
+               <button type="button" id="reset" onclick=reset()>reset</button>
+              <br>
+              <br>
+              <label for="hasil">Hasil</label>
+              <input type="text" id="hasil">
+              <br>
+              <br>
+      
+      </form>
+<script>
+    
+    let nilai1 = document.getElementById('nilai1');
+    let nilai2 = document.getElementById('nilai2');
+    let tambah = document.getElementById('tambah');
+    let kurang = document.getElementById('kurang');
+    let kali = document.getElementById('kali');
+    let bagi = document.getElementById('bagi');
+    let hasil = document.getElementById('hasil');
+    let reset = document.getElementById('reset');
+    
+    tambah.addEventListener('click', function(){
+        tambah = parseInt(nilai1.value) + parseInt(nilai2.value);
+        hasil.value = tambah;
+    });
+    
+    kurang.addEventListener('click', function(){
+        kurang = parseInt(nilai1.value) - parseInt(nilai2.value);
+        hasil.value = kurang;    
+    });
+    
+    kali.addEventListener('click', function(){
+        kali = parseInt(nilai1.value) * parseInt(nilai2.value);
+        hasil.value = kali;
+    });
+    
+    bagi.addEventListener('click', function(){
+        bagi = parseInt(nilai1.value) / parseInt(nilai2.value);
+        hasil.value = bagi;
+    });
+    
+ 
+    reset.addEventListener('click', function(){
+            hasil.value = "";
+        nilai1.value = "";
+        nilai2.value = "";   
+    });
+</script>
+</body>
+</html>
